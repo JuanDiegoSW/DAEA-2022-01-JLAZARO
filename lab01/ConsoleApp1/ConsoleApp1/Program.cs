@@ -44,6 +44,25 @@ namespace ConsoleApp1
             int res = a * b;
             return res;
         }
+        static void primos()
+        {
+            int cont = 0; //un contador, el cual si es mayor a dos indica que el numero no es primo
+            for (int i = 2; i <= 30; i++)
+            {  
+                for (int j = 1; j <= i; j++)
+                {  
+                    if (i % j == 0)
+                    {
+                        cont = cont + 1;
+                    }
+                }
+                if (cont <= 2)
+                { //si variable cont es mayor a dos, el numero es divisible en mas de dos numero osea no es primo
+                    Console.WriteLine(i);
+                }      
+                cont = 0;               //igualamos a cero para hacer otra evaluacion con otro numero
+            }
+        }
         static void Main(string[] args)
         {
             Console.Title = "Procedimientos y funciones";
@@ -58,6 +77,7 @@ namespace ConsoleApp1
                 Console.WriteLine("[5] Multiplicacion de dos numeros");
                 Console.WriteLine("[6] Convertir °F a °C");
                 Console.WriteLine("[7] Convertir °C a °F");
+                Console.WriteLine("[8] Primeros numeros primos");
                 Console.WriteLine("[0] Salir");
                 Console.WriteLine("Ingrese una opción y presione ENTER");
                 opcion = Console.ReadLine();
@@ -110,6 +130,11 @@ namespace ConsoleApp1
                         Console.WriteLine("Ingrese el dato a calcular:");
                         int f = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("El resultado es  {1}°F", f, formula2(f));
+                        Console.ReadKey();
+                        break;
+                    case "8":
+                        Console.WriteLine("Calculando...");
+                        primos();
                         Console.ReadKey();
                         break;
                 }
