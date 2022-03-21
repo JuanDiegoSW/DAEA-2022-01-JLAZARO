@@ -14,14 +14,14 @@ namespace ConsoleApp1
         }
         static void Raiz()
         {
-            for(int i =1; i <= 10; i++)
+            for (int i = 1; i <= 10; i++)
             {
                 Console.WriteLine("la raiz cuadrada de {0} es:{1}", i, Math.Sqrt(i));
             }
         }
         static int formula1(int f)
         {
-            int x = (5*(f - 32) / 9);
+            int x = (5 * (f - 32) / 9);
             return x;
         }
         static int formula2(int c)
@@ -29,7 +29,7 @@ namespace ConsoleApp1
             int z = ((9 * c) / 5) + 32;
             return z;
         }
-        static int resta( int a , int b)
+        static int resta(int a, int b)
         {
             int res = a - b;
             return res;
@@ -48,9 +48,9 @@ namespace ConsoleApp1
         {
             int cont = 0; //un contador, el cual si es mayor a dos indica que el numero no es primo
             for (int i = 2; i <= 30; i++)
-            {  
+            {
                 for (int j = 1; j <= i; j++)
-                {  
+                {
                     if (i % j == 0)
                     {
                         cont = cont + 1;
@@ -59,7 +59,7 @@ namespace ConsoleApp1
                 if (cont <= 2)
                 { //si variable cont es mayor a dos, el numero es divisible en mas de dos numero osea no es primo
                     Console.WriteLine(i);
-                }      
+                }
                 cont = 0;               //igualamos a cero para hacer otra evaluacion con otro numero
             }
         }
@@ -123,7 +123,7 @@ namespace ConsoleApp1
                     case "6":
                         Console.WriteLine("Ingrese el dato a calcular:");
                         int c = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine("El resutlado es {1}°C",c, formula1(c));
+                        Console.WriteLine("El resutlado es {1}°C", c, formula1(c));
                         Console.ReadKey();
                         break;
                     case "7":
