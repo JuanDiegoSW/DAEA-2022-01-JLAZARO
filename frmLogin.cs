@@ -29,9 +29,18 @@ namespace WindowsFormsApp1
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            PrincipalMDI principal = new PrincipalMDI();
-            principal.Show();
-            this.Hide();
+            if( txtUsuario.Text == "admin" && txtPassword.Text =="admin")
+            {
+                PrincipalMDI principal = new PrincipalMDI();
+                principal.Show();
+                this.Hide();
+            }
+            else
+            {
+                txtUsuario.Text = "";
+                txtPassword.Text = "";
+            }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

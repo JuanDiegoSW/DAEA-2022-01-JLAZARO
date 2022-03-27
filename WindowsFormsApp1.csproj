@@ -52,6 +52,30 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="manCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manCategorias.Designer.cs">
+      <DependentUpon>manCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manClientes.Designer.cs">
+      <DependentUpon>manClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manProductos.Designer.cs">
+      <DependentUpon>manProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manProveedores.Designer.cs">
+      <DependentUpon>manProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="manUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +90,54 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="regCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="regCompras.Designer.cs">
+      <DependentUpon>regCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="regVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="regVentas.Designer.cs">
+      <DependentUpon>regVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="repClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="repClientes.Designer.cs">
+      <DependentUpon>repClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="repCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="repCompras.Designer.cs">
+      <DependentUpon>repCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="repInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="repInventario.Designer.cs">
+      <DependentUpon>repInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="repProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="repProveedores.Designer.cs">
+      <DependentUpon>repProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="repUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="repUsuarios.Designer.cs">
+      <DependentUpon>repUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="repVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="repVentas.Designer.cs">
+      <DependentUpon>repVentas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
