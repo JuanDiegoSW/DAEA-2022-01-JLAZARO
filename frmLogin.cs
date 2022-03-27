@@ -31,12 +31,14 @@ namespace WindowsFormsApp1
         {
             if( txtUsuario.Text == "admin" && txtPassword.Text =="admin")
             {
+                Console.WriteLine("Credenciales Correctas");
                 PrincipalMDI principal = new PrincipalMDI();
                 principal.Show();
                 this.Hide();
             }
             else
             {
+                Console.WriteLine("Credenciales Incorrectas");
                 txtUsuario.Text = "";
                 txtPassword.Text = "";
             }
