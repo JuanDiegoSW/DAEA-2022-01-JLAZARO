@@ -1,0 +1,11 @@
+E:\VI Semestre\Repositorios\Lab03\Lab03\bin\Debug\Lab03.exe.config
+E:\VI Semestre\Repositorios\Lab03\Lab03\bin\Debug\Lab03.exe
+E:\VI Semestre\Repositorios\Lab03\Lab03\bin\Debug\Lab03.pdb
+E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.csproj.AssemblyReference.cache
+E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.Form1.resources
+E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.Properties.Resources.resources
+E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.csproj.GenerateResource.cache
+E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.csproj.CoreCompileInputs.cache
+E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.exe
+E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.pdb
+E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.frm_usuarios.resources
