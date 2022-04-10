@@ -51,5 +51,18 @@ namespace Lab03
             usuario.Show();
 
         }
+
+        private void btnPersona_Click(object sender, EventArgs e)
+        {
+            frm_persona persona = new frm_persona(conn);
+            persona.Show();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            login l = new login(conn);
+            l.Show();
+
+        }
     }
 }

@@ -9,3 +9,5 @@ E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.csproj.CoreCompileInputs
 E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.exe
 E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.pdb
 E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.frm_usuarios.resources
+E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.frm_persona.resources
+E:\VI Semestre\Repositorios\Lab03\Lab03\obj\Debug\Lab03.login.resources

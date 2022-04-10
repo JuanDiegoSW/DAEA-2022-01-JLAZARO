@@ -42,6 +42,8 @@ namespace Lab03
             this.btnEstado = new System.Windows.Forms.Button();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnPersona = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -59,6 +61,7 @@ namespace Lab03
             this.txtServidor.Name = "txtServidor";
             this.txtServidor.Size = new System.Drawing.Size(150, 20);
             this.txtServidor.TabIndex = 1;
+            this.txtServidor.Text = "JUAN";
             // 
             // txtUsuario
             // 
@@ -83,6 +86,7 @@ namespace Lab03
             this.txtBaseDatos.Name = "txtBaseDatos";
             this.txtBaseDatos.Size = new System.Drawing.Size(150, 20);
             this.txtBaseDatos.TabIndex = 5;
+            this.txtBaseDatos.Text = "School";
             // 
             // label3
             // 
@@ -160,11 +164,33 @@ namespace Lab03
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
+            // btnPersona
+            // 
+            this.btnPersona.Location = new System.Drawing.Point(485, 309);
+            this.btnPersona.Name = "btnPersona";
+            this.btnPersona.Size = new System.Drawing.Size(75, 23);
+            this.btnPersona.TabIndex = 13;
+            this.btnPersona.Text = "Persona";
+            this.btnPersona.UseVisualStyleBackColor = true;
+            this.btnPersona.Click += new System.EventHandler(this.btnPersona_Click);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Location = new System.Drawing.Point(289, 347);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 14;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 394);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.btnPersona);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.btnEstado);
@@ -200,6 +226,8 @@ namespace Lab03
         private System.Windows.Forms.Button btnEstado;
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btnPersona;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
 
