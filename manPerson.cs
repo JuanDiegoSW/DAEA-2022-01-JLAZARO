@@ -14,6 +14,8 @@ namespace Lab05
     public partial class manPerson : Form
     {
         SqlConnection con;
+        DataSet ds = new DataSet();
+        DataTable tablePerson = new DataTable();
         public manPerson()
         {
             InitializeComponent();
@@ -27,70 +29,80 @@ namespace Lab05
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            con.Open();
             String sql = "SELECT * FROM Person";
             SqlCommand cmd = new SqlCommand(sql, con);
-            SqlDataReader reader = cmd.ExecuteReader();
 
-            DataTable dt = new DataTable();
-            dt.Load(reader);
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = cmd;
 
-            dvgListado.DataSource = dt;
-            dvgListado.Refresh();
-            con.Close();
+            adapter.Fill(ds, "Person");
+            tablePerson = ds.Tables["Person"];
+            dvgListado.DataSource = tablePerson;
+            dvgListado.Update();
+
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            con.Open();
-            String sp = "InsertPerson";
-            SqlCommand cmd = new SqlCommand(sp, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
-            cmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
-            cmd.Parameters.AddWithValue("@HireDate", txtHireDate.Value);
-            cmd.Parameters.AddWithValue("@EnrollmentDate", txtEnrollmentDate.Value);
+            SqlCommand cmd = new SqlCommand("InsertPerson", con);
+            cmd.Parameters.Add("@FirstName", SqlDbType.VarChar, 50, "FirstName");
+            cmd.Parameters.Add("@LastName", SqlDbType.VarChar, 50, "LastName");
+            cmd.Parameters.Add("@HireDate", SqlDbType.Date).SourceColumn = "HireDate";
+            cmd.Parameters.Add("@EnrollmentDate", SqlDbType.Date).SourceColumn = "EnrollmentDate";
 
-            int codigo = Convert.ToInt32(cmd.ExecuteScalar());
-            MessageBox.Show("Se ha registrado nueva persona con el codigo: " + codigo);
-            con.Close();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.InsertCommand = cmd;
+            adapter.InsertCommand.CommandType = CommandType.StoredProcedure;
+
+            DataRow fila = tablePerson.NewRow();
+            fila["LastName"] = txtLastName.Text;
+            fila["FirstName"] = txtFirstName.Text;
+            fila["HireDate"] = txtHireDate.Value;
+            fila["EnrollmentDate"] = txtEnrollmentDate.Value;
+
+            tablePerson.Rows.Add(fila);
+
+            adapter.Update(tablePerson);
+            MessageBox.Show("Registro Insertado");
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            con.Open();
-            String sp = "UpdatePerson";
-            SqlCommand cmd = new SqlCommand(sp, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@PersonID", txtPersonID.Text);
-            cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
-            cmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
-            cmd.Parameters.AddWithValue("@HireDate", txtHireDate.Value);
-            cmd.Parameters.AddWithValue("@EnrollmentDate", txtEnrollmentDate.Value);
+            SqlCommand cmd = new SqlCommand("UpdatePerson", con);
+            cmd.Parameters.Add("@PersonID", SqlDbType.VarChar).SourceColumn = "PersonID";
+            cmd.Parameters.Add("@FirstName", SqlDbType.VarChar).SourceColumn = "FirstName";
+            cmd.Parameters.Add("@LastName", SqlDbType.VarChar).SourceColumn = "LastName";            
+            cmd.Parameters.Add("@HireDate", SqlDbType.Date).SourceColumn = "HireDate";
+            cmd.Parameters.Add("@EnrollmentDate", SqlDbType.Date).SourceColumn = "EnrollmentDate";
 
-            int resultado = cmd.ExecuteNonQuery();
-            if (resultado > 0)
-            {
-                MessageBox.Show("Se ha modificado el registro correctamente");
-            }
-            con.Close();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.UpdateCommand = cmd;
+            adapter.UpdateCommand.CommandType = CommandType.StoredProcedure;
+
+            DataRow[] fila = tablePerson.Select("PersonID='" + txtPersonID.Text + "'");
+            fila[0]["LastName"] = txtLastName.Text;
+            fila[0]["FirstName"] = txtFirstName.Text;
+            fila[0]["HireDate"] = txtHireDate.Value;
+            fila[0]["EnrollmentDate"] = txtEnrollmentDate.Value;
+
+            adapter.Update(tablePerson);
+            MessageBox.Show("Registro Actualizado");
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            con.Open();
-            String sp = "DeletePerson";
-            SqlCommand cmd = new SqlCommand(sp, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@PersonID", txtPersonID.Text);
+            SqlCommand cmd = new SqlCommand("DeletePerson", con);
+            cmd.Parameters.Add("@PersonID", SqlDbType.VarChar).SourceColumn = "PersonID";
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.DeleteCommand = cmd;
+            adapter.DeleteCommand.CommandType = CommandType.StoredProcedure;
 
-            int resultado = cmd.ExecuteNonQuery();
+            DataRow[] fila = tablePerson.Select("PersonID='" + txtPersonID.Text + "'");
+            tablePerson.Rows.Remove(fila[0]);
+            adapter.Update(tablePerson);
+            MessageBox.Show("Registro Eliminado");
 
-            if (resultado > 0)
-            {
-                MessageBox.Show("Se ha eliminado el registro correctamente");
-            }
-            con.Close();
         }
 
         private void dvgListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -103,86 +115,58 @@ namespace Lab05
             if(dvgListado.SelectedRows.Count > 0)
             {
                 txtPersonID.Text = dvgListado.SelectedRows[0].Cells[0].Value.ToString();
-                txtFirstName.Text = dvgListado.SelectedRows[0].Cells[1].Value.ToString();
-                txtLastName.Text = dvgListado.SelectedRows[0].Cells[2].Value.ToString();
-                txtHireDate.Text = dvgListado.SelectedRows[0].Cells[3].Value.ToString();
-                txtEnrollmentDate.Text = dvgListado.SelectedRows[0].Cells[4].Value.ToString();
+                txtLastName.Text = dvgListado.SelectedRows[0].Cells[1].Value.ToString();
+                txtFirstName.Text = dvgListado.SelectedRows[0].Cells[2].Value.ToString();
+
+                string hireDate = dvgListado.SelectedRows[0].Cells[3].Value.ToString();
+                if (String.IsNullOrEmpty(hireDate))
+                    txtHireDate.Checked = false;
+                else
+                    txtHireDate.Text = hireDate;
+
+                string enrollmentDate = dvgListado.SelectedRows[0].Cells[4].Value.ToString();
+                if (String.IsNullOrEmpty(enrollmentDate))
+                    txtEnrollmentDate.Checked = false;
+                else
+                    txtEnrollmentDate.Text = enrollmentDate;
             }
         }
-        /*
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void btnOrdenarApellido_click(object sender, EventArgs e)
         {
-            con.Open();
-            String sp = "BuscarPersonaNombre";
-            SqlCommand cmd = new SqlCommand(sp, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            DataTable dt = new DataTable();
-            dt.Load(reader);
-
-            dvgListado.DataSource = dt;
-            dvgListado.Refresh();
-            con.Close();
-        }*/
-
+            DataView dv = new DataView(tablePerson);
+            dv.Sort = "LastName ASC";
+            dvgListado.DataSource = dv;
+        }
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtPersonID.Clear();
             txtFirstName.Clear();
             txtLastName.Clear();
+            txtEnrollmentDate.Checked = false;
+            txtHireDate.Checked = false;
         }
 
         private void btnBuscarNombre_Click(object sender, EventArgs e)
         {
-            con.Open();
-            String sp = "BuscarPersonaNombre";
-            SqlCommand cmd = new SqlCommand(sp, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            DataTable dt = new DataTable();
-            dt.Load(reader);
-
-            dvgListado.DataSource = dt;
-            dvgListado.Refresh();
-            con.Close();
+            DataView dv = new DataView(tablePerson);
+            dv.RowFilter = string.Concat("FirstName LIKE '%", txtFirstName.Text, "%'");
+            dvgListado.DataSource = dv;
         }
 
         private void btnCodigo_Click(object sender, EventArgs e)
         {
-            con.Open();
-            String sp = "BuscarPersonaCodigo";
-            SqlCommand cmd = new SqlCommand(sp, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@PersonID", txtPersonID.Text);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            DataTable dt = new DataTable();
-            dt.Load(reader);
-
-            dvgListado.DataSource = dt;
-            dvgListado.Refresh();
-            con.Close();
+            DataView dv = new DataView(tablePerson);
+            dv.RowFilter = "PersonID = '" + txtPersonID.Text + "'";
+            dvgListado.DataSource = dv;
         }
 
         private void btnBuscarApellido_Click(object sender, EventArgs e)
         {
-            con.Open();
-            String sp = "BuscarPersonaApellido";
-            SqlCommand cmd = new SqlCommand(sp, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            DataTable dt = new DataTable();
-            dt.Load(reader);
-
-            dvgListado.DataSource = dt;
-            dvgListado.Refresh();
-            con.Close();
+            DataView dv = new DataView(tablePerson);
+            dv.RowFilter = string.Concat("LastName LIKE '%", txtLastName.Text, "%'");
+            dvgListado.DataSource = dv;
         }
+
+        
     }
 }

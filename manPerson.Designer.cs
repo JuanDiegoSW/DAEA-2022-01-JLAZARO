@@ -49,6 +49,7 @@ namespace Lab05
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnBuscarCodigo = new System.Windows.Forms.Button();
             this.btnBuscarApellido = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgListado)).BeginInit();
             this.SuspendLayout();
@@ -66,9 +67,9 @@ namespace Lab05
             this.groupBox1.Controls.Add(this.txtPersonID);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(16, 22);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(410, 193);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -78,7 +79,7 @@ namespace Lab05
             // 
             this.txtEnrollmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtEnrollmentDate.Location = new System.Drawing.Point(226, 156);
-            this.txtEnrollmentDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEnrollmentDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtEnrollmentDate.Name = "txtEnrollmentDate";
             this.txtEnrollmentDate.Size = new System.Drawing.Size(170, 20);
             this.txtEnrollmentDate.TabIndex = 10;
@@ -97,7 +98,7 @@ namespace Lab05
             // 
             this.txtHireDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtHireDate.Location = new System.Drawing.Point(8, 156);
-            this.txtHireDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHireDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtHireDate.Name = "txtHireDate";
             this.txtHireDate.Size = new System.Drawing.Size(170, 20);
             this.txtHireDate.TabIndex = 8;
@@ -114,8 +115,8 @@ namespace Lab05
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(8, 93);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLastName.Location = new System.Drawing.Point(226, 93);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(170, 20);
             this.txtLastName.TabIndex = 6;
@@ -132,8 +133,8 @@ namespace Lab05
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(226, 93);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFirstName.Location = new System.Drawing.Point(8, 93);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(170, 20);
             this.txtFirstName.TabIndex = 3;
@@ -151,7 +152,7 @@ namespace Lab05
             // txtPersonID
             // 
             this.txtPersonID.Location = new System.Drawing.Point(8, 42);
-            this.txtPersonID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPersonID.Margin = new System.Windows.Forms.Padding(2);
             this.txtPersonID.Name = "txtPersonID";
             this.txtPersonID.Size = new System.Drawing.Size(90, 20);
             this.txtPersonID.TabIndex = 1;
@@ -170,7 +171,7 @@ namespace Lab05
             // 
             this.btnListar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnListar.Location = new System.Drawing.Point(448, 34);
-            this.btnListar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListar.Margin = new System.Windows.Forms.Padding(2);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(114, 24);
             this.btnListar.TabIndex = 1;
@@ -182,7 +183,7 @@ namespace Lab05
             // 
             this.btnBuscarNombre.BackColor = System.Drawing.Color.Yellow;
             this.btnBuscarNombre.Location = new System.Drawing.Point(566, 37);
-            this.btnBuscarNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarNombre.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarNombre.Name = "btnBuscarNombre";
             this.btnBuscarNombre.Size = new System.Drawing.Size(107, 24);
             this.btnBuscarNombre.TabIndex = 2;
@@ -194,7 +195,7 @@ namespace Lab05
             // 
             this.btnInsertar.BackColor = System.Drawing.Color.Lime;
             this.btnInsertar.Location = new System.Drawing.Point(448, 64);
-            this.btnInsertar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInsertar.Margin = new System.Windows.Forms.Padding(2);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(114, 24);
             this.btnInsertar.TabIndex = 3;
@@ -206,7 +207,7 @@ namespace Lab05
             // 
             this.btnModificar.BackColor = System.Drawing.Color.White;
             this.btnModificar.Location = new System.Drawing.Point(448, 94);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(114, 24);
             this.btnModificar.TabIndex = 4;
@@ -218,7 +219,7 @@ namespace Lab05
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.IndianRed;
             this.btnEliminar.Location = new System.Drawing.Point(448, 150);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(114, 24);
             this.btnEliminar.TabIndex = 5;
@@ -230,7 +231,7 @@ namespace Lab05
             // 
             this.dvgListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgListado.Location = new System.Drawing.Point(16, 219);
-            this.dvgListado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dvgListado.Margin = new System.Windows.Forms.Padding(2);
             this.dvgListado.Name = "dvgListado";
             this.dvgListado.ReadOnly = true;
             this.dvgListado.RowHeadersVisible = false;
@@ -246,7 +247,7 @@ namespace Lab05
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnLimpiar.Location = new System.Drawing.Point(448, 122);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(114, 24);
             this.btnLimpiar.TabIndex = 7;
@@ -278,11 +279,24 @@ namespace Lab05
             this.btnBuscarApellido.UseVisualStyleBackColor = false;
             this.btnBuscarApellido.Click += new System.EventHandler(this.btnBuscarApellido_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.GreenYellow;
+            this.button1.Location = new System.Drawing.Point(448, 178);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 24);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Ordenar Apellido";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnOrdenarApellido_click);
+            // 
             // manPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 501);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnBuscarApellido);
             this.Controls.Add(this.btnBuscarCodigo);
             this.Controls.Add(this.btnLimpiar);
@@ -293,7 +307,7 @@ namespace Lab05
             this.Controls.Add(this.btnBuscarNombre);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "manPerson";
             this.Text = "Mantenimiento de Personas";
             this.Load += new System.EventHandler(this.manPerson_Load);
@@ -326,6 +340,7 @@ namespace Lab05
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnBuscarCodigo;
         private System.Windows.Forms.Button btnBuscarApellido;
+        private System.Windows.Forms.Button button1;
     }
 }
 
