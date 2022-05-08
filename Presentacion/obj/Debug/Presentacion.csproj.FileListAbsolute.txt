@@ -1,0 +1,15 @@
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\bin\Debug\Negocios.dll
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\bin\Debug\Datos.dll
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\bin\Debug\Negocios.pdb
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\bin\Debug\Datos.pdb
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\obj\Debug\Presentacion.Form1.resources
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\Juan Diego\source\repos\Lab07\Presentacion\obj\Debug\Presentacion.pdb
