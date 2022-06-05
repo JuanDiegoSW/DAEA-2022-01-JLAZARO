@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listado de Personas</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>PersonaID</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Fecha Nac.</th>
+        <th>Direccion</th>
+        <th>Email</th>
+    </tr>
+    @foreach(var p in Model)
+            {
+                <tr>
+                    <td>@p.PersonaID</td>
+                    <td>@p.Nombre</td>
+                    <td>@p.Apellido</td>
+                    <td>@p.FechaNac</td>
+                    <td>@p.Direccion</td>
+                    <td>@p.Email</td>
+                </tr>
+            }
+</table>
+
